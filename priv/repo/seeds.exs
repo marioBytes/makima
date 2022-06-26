@@ -9,3 +9,20 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+users = [
+  %{
+    email: "mario@makima.io",
+    password: "12345678"
+  },
+  %{
+    email: "testuser@makima.io",
+    password: "12345678"
+  },
+  %{
+    email: "makima@makima.io",
+    password: "12345678"
+  }
+]
+
+Enum.each(users, fn user -> Makima.Accounts.register_user(user) end)
